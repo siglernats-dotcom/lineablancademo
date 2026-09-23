@@ -57,30 +57,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        /* Animación de ondas expansivas para el botón dinámico de WhatsApp */
-        @keyframes wa-pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            }
-            70% {
-                box-shadow: 0 0 0 18px rgba(37, 211, 102, 0), 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-            }
-        }
-
-        .btn-whatsapp-dynamic {
-            background-color: #25D366;
-            animation: wa-pulse 2s infinite;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-whatsapp-dynamic:hover {
-            background-color: #20ba5a;
-            transform: scale(1.08) translateY(-3px);
-        }
-
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -389,28 +365,18 @@
         <p>SERVICIO TÉCNICO LEÓN © 2026. Todos los derechos reservados. Torre Moroleon 201, León, Guanajuato.</p>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DINÁMICO E HIPERREALISTA DE WHATSAPP -->
+    <!-- BOTÓN FLOTANTE EXACTO AL DE LA IMAGEN DE WHATSAPP -->
     <a href="https://wa.me/524774998116?text=Hola,%20necesito%20asistencia%20técnica%20en%20León" 
        target="_blank" 
        rel="noopener noreferrer" 
        aria-label="Contactar por WhatsApp a Servicio Técnico León"
-       class="btn-whatsapp-dynamic fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full flex items-center justify-center text-white cursor-pointer group">
+       class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-emerald-500/10 hover:scale-105 transition-transform duration-300">
         
-        <!-- Indicador de notificación / mensaje en vivo -->
-        <span class="absolute -top-1 -right-1 flex h-4 w-4">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-4 w-4 bg-red-500 text-[9px] font-bold text-white items-center justify-center">1</span>
-        </span>
-
-        <!-- SVG Oficial de WhatsApp con sombra vectorizada interna -->
-        <svg class="w-10 h-10 fill-current drop-shadow-md" viewBox="0 0 32 32">
-            <path d="M16 2A13 13 0 0 0 4.63 21.27L3 29l7.92-2.07A13 13 0 1 0 16 2zm0 23.8A10.8 10.8 0 0 1 10.48 24.3l-.39-.23-4.7 1.23 1.25-4.58-.26-.41A10.8 10.8 0 1 1 16 25.8zm5.92-8.08c-.32-.16-1.92-.95-2.22-1.06s-.51-.16-.73.16-.84 1.06-1.03 1.28-.38.24-.7.08a8.84 8.84 0 0 1-2.6-1.6 9.77 9.77 0 0 1-1.8-2.24c-.19-.32 0-.49.15-.65s.32-.38.48-.57a2.16 2.16 0 0 0 .32-.54.6.6 0 0 0 0-.57c-.08-.16-.73-1.75-1-2.4-.26-.62-.53-.54-.73-.55h-.62a1.2 1.2 0 0 0-.87.4 3.66 3.66 0 0 0-1.14 2.72 6.37 6.37 0 0 0 1.33 3.38A14.54 14.54 0 0 0 15 21.68a18.3 18.3 0 0 0 2 .74 4.8 4.8 0 0 0 2.21.14 3.6 3.6 0 0 0 2.37-1.67 2.92 2.92 0 0 0 .2-1.67c-.09-.12-.33-.28-.65-.44z"/>
-        </svg>
-
-        <!-- Tooltip emergente al pasar el cursor (Hover) -->
-        <span class="absolute right-20 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">
-            ¡Escríbenos en WhatsApp!
-        </span>
+        <div class="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg">
+            <svg class="w-10 h-10 fill-white" viewBox="0 0 24 24">
+                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.764.459 3.487 1.333 5.006L2 22l5.122-1.333a9.92 9.92 0 0 0 4.888 1.285h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.667-1.037-5.175-2.924-7.062A9.919 9.919 0 0 0 12.012 2zm0 18.271h-.003a8.274 8.274 0 0 1-4.218-1.157l-.302-.18-3.136.817.835-3.048-.198-.314a8.272 8.272 0 0 1-1.272-4.406c0-4.561 3.711-8.273 8.278-8.273 2.21 0 4.288.861 5.85 2.425a8.232 8.232 0 0 1 2.421 5.85c-.002 4.562-3.713 8.274-8.28 8.274zm4.536-6.195c-.249-.125-1.472-.726-1.7-.809-.228-.083-.394-.125-.561.125-.166.249-.644.809-.789.975-.145.166-.291.187-.54.062a6.85 6.85 0 0 1-2.016-1.243 7.555 7.555 0 0 1-1.396-1.737c-.145-.249-.016-.384.109-.508.113-.112.249-.291.374-.436.125-.145.166-.249.249-.415.083-.166.042-.312-.021-.436-.062-.125-.561-1.351-.769-1.85-.202-.488-.408-.422-.561-.43-.145-.008-.312-.008-.478-.008s-.436.062-.665.312c-.228.249-.873.852-.873 2.079 0 1.226.894 2.41 1.018 2.576.125.166 1.759 2.686 4.262 3.766.595.257 1.061.41 1.423.525.598.19 1.142.163 1.572.099.48-.071 1.472-.602 1.68-1.184.207-.582.207-1.08.145-1.184-.062-.104-.228-.166-.477-.291z"/>
+            </svg>
+        </div>
     </a>
 
 </body>
